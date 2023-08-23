@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/investrties/static/css/main.793bfc1b.css",
-    "main.js": "/investrties/static/js/main.b583824e.js",
+    "main.css": "/investrties/static/css/main.025dbf8e.css",
+    "main.js": "/investrties/static/js/main.b2b315be.js",
     "static/js/787.98b6d810.chunk.js": "/investrties/static/js/787.98b6d810.chunk.js",
     "static/media/logo.svg": "/investrties/static/media/logo.998f25aa6f43863233e1bbdbe8af3d69.svg",
     "index.html": "/investrties/index.html",
-    "main.793bfc1b.css.map": "/investrties/static/css/main.793bfc1b.css.map",
-    "main.b583824e.js.map": "/investrties/static/js/main.b583824e.js.map",
+    "main.025dbf8e.css.map": "/investrties/static/css/main.025dbf8e.css.map",
+    "main.b2b315be.js.map": "/investrties/static/js/main.b2b315be.js.map",
     "787.98b6d810.chunk.js.map": "/investrties/static/js/787.98b6d810.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.793bfc1b.css",
-    "static/js/main.b583824e.js"
+    "static/css/main.025dbf8e.css",
+    "static/js/main.b2b315be.js"
   ]
 }
