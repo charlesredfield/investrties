@@ -1,38 +1,237 @@
 .App {
-  text-align: center;
-}
+    margin: 0;
+    overscroll-behavior: none;
+    z-index: 1;
+    overflow-x: none;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#section_1{
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 30vh;
+  text-align: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+#section_2{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 60vh; 
+  justify-content: center;
+  
+}
+#section_3{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 40vh;
+  text-align: center;
+  justify-content: center;
+}
+#section_4{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  justify-content: center;
+}
+.signup_section {
+  background-color: white;
+  width: 90%;
+  border: 1px solid #209B47;
+  border-radius: 1rem;
+  box-shadow: rgba(32, 155, 71, 0.4) -5px 5px, rgba(32, 155, 71, 0.3) -10px 10px, rgba(32, 155, 71, 0.2) -15px 15px, rgba(32, 155, 71, 0.1) -20px 20px, rgba(32, 155, 71, 0.05) -25px 25px;
+}
+.header_text_box {
+  margin-top: 50px;
+  color: #353839;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.grow {
+  text-decoration: underline;
+  font-size: 2.5rem;
+  color: #209B47;
+}
+.left_text_box {
+  text-align: left;
+  margin-left: 5px;
+  font-size: 1.8rem;
+  color:#353839;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  line-height: 50px;
+}
+.accounting {
+  color:#FAF9F6;
+}
+.push_right {
+  margin-left: 50px;
+  color:#FAF9F6;
+  font-size: 2rem;
+  line-height: 0px;
+  
+}
+.push_further_right {
+  margin-left: 140px;
+  color:#FAF9F6;
+  font-size: 2rem;
+  line-height: 0px;
+
+}
+.underline {
+  text-decoration: underline;
+  font-size: 2.2rem;
+  color: #353839;
+}
+.bottom_text_box {
+  text-align: center;
+  color: #353839;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+  .green {
+    background-color: #209B47;
+  }
+  .offwhite {
+    background-color: #FAF9F6;
+  }
+  .top_triangle_divider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0
 }
 
-.App-link {
-  color: #61dafb;
+.top_triangle_divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.top_triangle_divider .shape-fill {
+    fill: #FAF9F6;
+}
+.bottom_triangle_divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.bottom_triangle_divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 25px;
+}
+
+.bottom_triangle_divider .shape-fill {
+  fill: #FAF9F6;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    padding-bottom: 1rem;
+    align-items: center;
+}
+.signup {
+  color: #209B47;
+  font-size: 2rem;
+}
+.login, .login:visited {
+    color: #209B47;
+    font-size: 1.1rem;
+}
+label {
+  color: #353839;
+
+}
+input[type="text"],
+input[type="password"],
+textarea {
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  width: 80%;
+  color: #209B47;
+}
+
+label,
+.submit {
+  margin-top: 1rem;
+}
+
+.submit {
+  font-size: 1.7rem;
+  text-decoration: underline;
+  color: #209B47;
+  
+}
+
+.instructions {
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    background: #209B47;
+    color: #FAF9F6;
+    padding: 0.25rem;
+    position: relative;
+    bottom: -10px;
+    opacity: 100%;
+  transition: opacity 0.3s ease-in;
+}
+
+.instructions > svg {
+    margin-right: 0.25rem;
+}
+
+.offscreen {
+    position: absolute;
+    left: -9999px;
+    opacity: 0%;
+}
+
+.hide {
+    display: none;
+}
+
+.valid {
+    color: limegreen;
+    margin-left: 0.25rem;
+}
+
+.invalid {
+    color: red;
+    margin-left: 0.25rem;
+}
+
+.errmsg {
+    background-color: lightpink;
+    color: firebrick;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.line {
+    display: inline-block;
+}
+.registered {
+  color: #353839;
+
 }
