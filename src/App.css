@@ -1,8 +1,7 @@
 .App {
     margin: 0;
-    overscroll-behavior: none;
     z-index: 1;
-    overflow-x: none;
+    max-width: 100%;
 
   }
 #section_1{
@@ -141,13 +140,21 @@
   fill: #FAF9F6;
 }
 
-form {
+#loginForm {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     flex-grow: 1;
     padding-bottom: 1rem;
     align-items: center;
+}
+#signupForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  padding-bottom: 1rem;
+  align-items: center;
 }
 .signup {
   color: #209B47;
@@ -161,8 +168,10 @@ label {
   color: #353839;
 
 }
-input[type="text"],
-input[type="password"],
+#username,
+#email,
+#password,
+#confirm_pwd,
 textarea {
   font-family: 'Nunito', sans-serif;
   font-size: 22px;
@@ -235,3 +244,293 @@ label,
   color: #353839;
 
 }
+#section_post {
+  position: relative;
+  display: flex;
+  min-height: 14vh;
+  max-height: 14vh;
+  background-color: #FAF9F6;
+  border: 2px solid #ececec;
+  margin-top: 10px;
+  
+}
+#postForm {
+  height: 100%;
+  width: 100%;
+}
+.search-bar-wrapper {
+  display: flex;
+  align-items: center; /* Horizontally center content */
+  justify-content: center; /* Vertically center content */
+  text-align: center;
+  height: 8vh; /* Adjust the height as needed */
+  max-height: 8vh;
+}
+.searchBarDiv {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 8vh;
+  max-height: 8vh;
+  text-align: center;
+  justify-content: center;
+  background-color: #209B47;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.searchBarForm {
+  width: 100%;
+  text-align: center;
+}
+
+.searchBar,
+textarea {
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  width: 100%; /* Adjust the width as needed */
+  color: #209B47;
+}
+.dropDownSearch {
+   width: 100%;
+   box-sizing: border-box;
+  background-color: white;
+  height: 50vh;
+  z-index: 5;
+  position: absolute;
+  top: 90%; /* Position below the search bar */
+  left: 0;
+  display: none; /* Start hidden */
+  justify-content: center; /* Vertically center content */
+  border-left: 2px solid #209B47;
+  border-right: 2px solid #209B47;
+  border-bottom: 2px solid #209B47;
+  
+}
+
+.dropDownSearch ul {
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove default list padding */
+  display: flex;
+  flex-direction: column; /* Display results vertically */
+ 
+  
+}
+
+.dropDownSearch li {
+  margin: 10px 0; /* Add space between results */
+  display: flex;
+  align-items: center; /* Center horizontally */
+  text-align: center;
+}
+
+.dropDownSearch a {
+  text-decoration: none; /* Remove underline */
+  color: #333; /* Set text color */
+  font-size: 16px; /* Increase name text size */
+  margin-top: 5px; /* Add space between profile picture and name */
+}
+
+.dropDownSearch img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px; /* Add space between profile picture and name */
+}
+.down {
+  display: flex;
+}
+.up {
+  display: none;
+}
+.postInput {
+  width: 80%;
+  height: 50px;
+  border-radius: 30px;
+ margin-left: 10px;
+  margin-top: 10px;
+  font-size: large;
+  border: 2px solid #ececec;
+  padding-left: 20px;
+}
+.searchBar {
+  border-radius: 5px;
+  height: 3vh;
+   font-size: large;
+   border: 2px solid #ececec;
+   padding-left: 20px;
+   margin-left: 0;
+}
+.friendListSearchBar {
+  border-radius: 5px;
+  height: 3vh;
+  width: 250px;
+  margin-left: 25px;
+   font-size: large;
+   border: 2px solid #ececec;
+   padding-left: 20px;
+}
+.friendListSearchBar2 {
+  border-radius: 5px;
+  height: 3vh;
+  width: 250px;
+   font-size: large;
+   border: 2px solid #ececec;
+   padding-left: 20px;
+   margin-left: 0;
+}
+.searchBarDiv2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  min-height: 8vh;
+  max-height: 8vh;
+  text-align: center;
+  justify-content: center;
+  background-color: #209B47;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.about-text-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  max-width: 100%; /* Ensure the text doesn't overflow */
+}
+
+.about-text {
+  animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+}
+.modal {
+  position: fixed;
+  box-sizing: border-box;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: 90%;
+  height: auto;
+  padding: 20px;
+  z-index: 100;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  filter: blur(0px); /* Adjust the blur amount as needed */
+}
+
+/* CSS styles to blur the background */
+.blurred-background {
+  filter: blur(5px); /* Adjust the blur amount as needed */
+    transition: filter 0.3s ease-in-out; /* Add a smooth transition effect */
+  }
+  .isOpen {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out, visibility 0s linear;
+    visibility: visible;
+  }
+  .isNotOpen {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s linear;
+  }
+  .commentInput {
+    width: 73%;
+    height: 40px;
+    border-radius: 30px;
+    font-size: large;
+    border: 2px solid #ececec;
+    padding-left: 20px;
+    
+  }
+  .like-button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    margin-left: 30%;
+  }
+  
+  .like-icon {
+    fill: black; /* Initial fill color */
+    width: 32px;
+    height: 32px;
+    transition: fill 0.2s ease;
+    padding-top: 10px;
+  }
+  
+  .liked-icon {
+    fill: #209B47; /* Fill color when liked */
+  }
+  
+  .liked .like-icon {
+    fill: #209B47; /* Apply red fill when the button is liked */
+  }
+  .commentStyles {
+    width: 80%;
+    height: auto;
+    background-color: #FAF9F6;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-top-right-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+  }
+  .comments{
+    padding: 4%;
+margin-top: 0;
+  }
+  .commentUser{
+    font-size: larger;
+    font-weight: 500;
+    color: black;
+  }
+  .commentComment{
+    font-size: medium;
+    color: black;
+  }
+  .comment-container {
+    display: flex;
+    margin-bottom: 10px; /* Add spacing between comments */
+  }
+  
+  .profile-picture-container {
+    margin-right: 1%;
+    margin-left: 3%; /* Add spacing between the picture and comment text */
+  }
+
+  .isCommentsNotOpen {
+    visibility: hidden;
+    opacity: 0;
+    max-height: 0px;
+     transition: opacity 0.3s ease-in-out, visibility 0.3s linear, max-height 0.3s linear;
+  }
+  .isCommentsOpen {
+    visibility: visible;
+    opacity: 1;
+    max-height: 500px;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s linear, max-height 0.3s linear;
+
+  }

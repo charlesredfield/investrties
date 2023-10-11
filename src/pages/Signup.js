@@ -107,7 +107,7 @@ const Signup = () => {
       <section className="signup_section"><p ref={errRef} className={errMsg ? "errmsg" :
         "offscreen"} aria-live="assertive">{errMsg}</p>
         <h1 className="signup">Sign Up</h1>
-        <form onSubmit={handleSubmit}>
+        <form id="signupForm" onSubmit={handleSubmit}>
           <label htmlFor="username">
             Username:
             <span className={validName ? "valid" : "hide"}>

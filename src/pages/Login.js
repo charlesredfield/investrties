@@ -18,6 +18,8 @@ const Login = () => {
     const [pwd, setPwd] = useState('');
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
+    const [infoSet, setInfoSet] = useState(false);
+
 
     useEffect(() => {
         userRef.current.focus();
@@ -31,10 +33,13 @@ const Login = () => {
         username: user,
         password: pwd
       }
-
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        console.log("Submitting login request with the following data:");
+        console.log("Username:", user);
+        console.log("Password:", pwd);
+        console.log("accountInfo:", accountInfo);
+        
         try {
             const response = await axios.post(LOGIN_URL,
                 JSON.stringify(accountInfo),
@@ -43,13 +48,27 @@ const Login = () => {
                     withCredentials: true
                 }
             );
-            const accessToken = response?.data;
-            cookies.set('accessToken', accessToken, { path: '/', maxAge: 3600 }); // maxAge is in seconds
-            console.log(accessToken);
-            setSuccess(true);
-            setAuth({ user, pwd, accessToken });
-            setUser('');
-            setPwd('');
+            if (response.status === 201) {
+                // Set cookies first
+                const accessToken = response?.data;
+                cookies.set('accessToken', accessToken, { path: '/', maxAge: 3600 });
+                setSuccess(true);
+                setAuth({ user, pwd, accessToken });
+
+                
+                // Check if the response indicates that profile information is already set
+            } 
+            if (response.status === 200) {
+                    // Redirect to AccountPage
+                    const accessToken = response?.data;
+                    cookies.set('accessToken', accessToken, { path: '/', maxAge: 3600 });
+                     document.location.replace('/accountpage');
+                    setAuth({ user, pwd, accessToken });
+                } else {
+                   // Handle other status codes as needed
+                console.error('Unexpected response:', response);
+                }
+            
         } catch (err) {
             if (err.response?.status === 404) {
                 setErrMsg('Account Not Found');
@@ -74,7 +93,7 @@ const Login = () => {
                       <section className="signup_section">
                           <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                           <h1 className="signup">Log In</h1>
-                          <form onSubmit={handleSubmit}>
+                          <form id="loginForm" onSubmit={handleSubmit}>
                               <label htmlFor="username">Username or Email:</label>
                               <input
                                   type="text"

@@ -2,6 +2,7 @@ html {
   overscroll-behavior: none;
   height: 100%;
   background-color: white;
+  max-width: 100%;
 }
 body {
   margin: 0;
@@ -14,6 +15,7 @@ body {
   background-size: cover;
   overscroll-behavior: none;  
   height: 100%;
+  max-width: 100%;
 
 }
 code {
