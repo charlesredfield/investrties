@@ -156,11 +156,11 @@
   padding-bottom: 1rem;
   align-items: center;
 }
-.signup {
+.signup_header {
   color: #209B47;
   font-size: 2rem;
 }
-.login, .login:visited {
+.login_header, .login_link:visited {
     color: #209B47;
     font-size: 1.1rem;
 }
@@ -247,8 +247,7 @@ label,
 #section_post {
   position: relative;
   display: flex;
-  min-height: 14vh;
-  max-height: 14vh;
+  height: auto;
   background-color: #FAF9F6;
   border: 2px solid #ececec;
   margin-top: 10px;
@@ -534,3 +533,115 @@ margin-top: 0;
     transition: opacity 0.3s ease-in-out, visibility 0.3s linear, max-height 0.3s linear;
 
   }
+
+  @media screen and (min-width: 1024px) {
+    #section_4{
+      position: relative;
+      display: flex;
+      flex-direction:row;
+      align-items: left;
+      min-height: 100vh;
+      text-align: center;
+      justify-content: center;
+    }
+  .signup_section {
+    width: 40%; 
+    height: 50%;
+
+  }
+    .menu {
+      display: none;
+    }
+    #signupForm {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      align-items: left;
+    }
+    .signup_header {
+      color: #209B47;
+      font-size: 2rem;
+    }
+    .login_header, .login_link:visited {
+        color: #209B47;
+        font-size: 1.1rem;
+    }
+    label {
+      color: #353839;
+    font-weight: 500;
+    }
+    #username,
+    #email,
+    #password,
+    #confirm_pwd,
+    textarea {
+      font-family: 'Nunito', sans-serif;
+      font-size: 20px;
+      padding: .25rem;
+      border-radius: 0.2rem;
+      border: none;
+      width: 75%;
+      color: #209B47;
+      background-color:white;
+      border: 1px solid #209B47;
+      outline: none;
+      box-shadow: 0px 1px 0px 0px rgba(27, 31, 36, 0.04);
+    }
+    .submit {
+      font-size: 1.2rem;
+      font-weight: 500;
+      width: 80%;
+      text-decoration: none;
+      color: #FAF9F6;
+      background-color: #209B47;
+      padding: 0.15rem; /* Adjust padding as needed */
+      border: 2px solid #209B47;
+      border-radius: 0.2rem; /* Rounded corners */
+      transition: background-color .3s ease-in, border .3s ease-in;
+      margin-top: 7%;
+      
+    }
+    .submit:hover {
+      background-color: #1d873e;
+      border: 2px solid #1d873e;
+    }
+    .last_text {
+      font-size: 3rem;
+    }
+    .accountPageContainer {
+      width: 65%;
+      margin: 0 auto; /* Center the container horizontally */
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .modal {
+      width: 30%;
+    }
+    .profilePictureBorder {
+      left: 20% !important;
+      top: 7% !important;
+    }
+    .postButton {
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+      font: inherit;
+      color: inherit;
+      cursor: pointer;
+      padding-bottom: 20px;
+    }
+    .friendButton {
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+      font: inherit;
+      color: inherit;
+      cursor: pointer;
+    }
+ .userPostContainer {
+  width: 50% !important;
+ }
+}

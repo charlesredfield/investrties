@@ -375,7 +375,7 @@ const image = new Image();
       }
     };
 return(
-  <div>
+  <div className="accountPageContainer">
     {imagesLoaded ? (
       <div>
     <div className={`modal ${isModalOpen ? 'isOpen' : 'isNotOpen'}`}>
@@ -433,8 +433,9 @@ className={`accountPage ${isModalOpen ? 'blurred-background' : ''}`}
       <div className="searchBarDiv">
       <SearchBar/>
       </div>
-      <div style={{width: '100%', height: 'auto', backgroundColor: '#FAF9F6', marginTop: '10px', border: '2px solid #ececec',maxWidth: '100%', boxSizing: 'border-box',}}>
+      <div className="profileContainer" style={{width: '100%', height: 'auto', backgroundColor: '#FAF9F6', marginTop: '10px', border: '2px solid #ececec',maxWidth: '100%', boxSizing: 'border-box',}}>
       <div
+      className="profilePictureBorder"
         style={{
           display: 'flex',
           alignItems: 'center',
@@ -452,6 +453,7 @@ className={`accountPage ${isModalOpen ? 'blurred-background' : ''}`}
         }}>
       
       <img
+      className="actualProfilePicture"
         src={profilePicture}
         alt="Profile Picture"
         style={{
@@ -529,8 +531,8 @@ className={`accountPage ${isModalOpen ? 'blurred-background' : ''}`}
             </div>
       <div style={{width: '100%', height: 'auto', backgroundColor: '#FAF9F6', marginTop: '10px', border: '2px solid #ececec',maxWidth: '100%', boxSizing: 'border-box', textAlign: 'center'}}>
       <h1 style={{color: '#209B47'}}>Friends</h1>
-      <button onClick={friendRequests} style={{ marginRight: '10px' }}>Friend Requests</button>
-      <button onClick={friendLists}style={{ marginLeft: '10px', paddingBottom: '20px' }}>Friend Lists</button>
+      <button className="friendButton" onClick={friendRequests} style={{ marginRight: '10px' }}>Friend Requests</button>
+      <button className="friendButton" onClick={friendLists}style={{ marginLeft: '10px', paddingBottom: '20px' }}>Friend Lists</button>
       </div>
       <div style={{width: '100%', height: 'auto', backgroundColor: '#FAF9F6', marginTop: '10px', border: '2px solid #ececec',maxWidth: '100%', boxSizing: 'border-box', textAlign: 'center'}}>
         <h1 style={{textDecoration: 'underline', color: '#209B47'}}>Portfolio</h1>
@@ -561,6 +563,7 @@ className={`accountPage ${isModalOpen ? 'blurred-background' : ''}`}
               width: '100%',
               marginTop: '13px',
               left: '10px',
+              height: 'auto',
               overflowX: 'hidden',
               boxSizing: 'border-box',
             }}
@@ -615,6 +618,8 @@ className={`accountPage ${isModalOpen ? 'blurred-background' : ''}`}
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
+    borderBottomLeftRadius: '1.5rem',
+    borderBottomRightRadius: '1.5rem'
   }}
 >
   <h1 style={{ textAlign: 'left' }}>Activity</h1>
@@ -622,6 +627,7 @@ className={`accountPage ${isModalOpen ? 'blurred-background' : ''}`}
   {Array.isArray(getPosts) &&
         getPosts.map((postItem, index) => (
     <div
+    className="userPostContainer"
       key={postItem.id}
       style={{
         display: 'flex',
@@ -670,7 +676,7 @@ className={`accountPage ${isModalOpen ? 'blurred-background' : ''}`}
         {postItem.photoContent && (
                   <img
                   src={`data:image/jpeg;base64,${postItem.photoContent}`}
-                  style={{ maxWidth: '100%', height: 'auto', marginBottom: '5px'}}
+                  style={{ maxWidth: '100%',maxHeight: '95vh', marginBottom: '5px'}}
                     alt="Photo"
                   />
                 )}
@@ -678,7 +684,7 @@ className={`accountPage ${isModalOpen ? 'blurred-background' : ''}`}
                   <video  
                   controls
                   loop
-                  style={{ maxWidth: '100%', width: '100%', height: 'auto', marginBottom: '5px'}}
+                  style={{ maxWidth: '100%', width: '100%', maxHeight: '95vh', marginBottom: '5px'}}
                   src={`data:video/mp4;base64,${postItem.videoContent}`}
                   type="video/mp4">
                     Your browser does not support the video tag.

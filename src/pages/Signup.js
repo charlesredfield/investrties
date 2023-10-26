@@ -106,10 +106,10 @@ const Signup = () => {
     <><Navbar /><Menu /><section id="section_4" className="offwhite">
       <section className="signup_section"><p ref={errRef} className={errMsg ? "errmsg" :
         "offscreen"} aria-live="assertive">{errMsg}</p>
-        <h1 className="signup">Sign Up</h1>
+        <h1 className="signup_header">Sign Up</h1>
         <form id="signupForm" onSubmit={handleSubmit}>
           <label htmlFor="username">
-            Username:
+            Username
             <span className={validName ? "valid" : "hide"}>
               Valid
             </span>
@@ -136,7 +136,7 @@ const Signup = () => {
             Letters, numbers, underscores, hyphens allowed.
           </p>
           <label htmlFor="email">
-            Email:
+            Email
             <span className={validEmail ? "valid" : "hide"}>
               Valid
             </span>
@@ -159,7 +159,7 @@ const Signup = () => {
 
 
           <label htmlFor="password">
-            Password:
+            Password
             <span className={validPwd ? "valid" : "hide"}>
               Valid
             </span>
@@ -184,7 +184,7 @@ const Signup = () => {
           </p>
 
           <label htmlFor="confirm_pwd">
-            Confirm Password:
+            Confirm Password
             <span className={validMatch && matchPwd ? "valid" : "hide"}>
               Valid
             </span>
@@ -211,7 +211,7 @@ const Signup = () => {
           Already registered?<br />
           <span className="line">
             {/*put router link here*/}
-            <NavLink to='/login' className="login">Log In</NavLink>
+            <NavLink to='/login' className="login_link">Log In</NavLink>
           </span>
         </p>
       </section>

@@ -52,7 +52,7 @@ const Login = () => {
                 // Set cookies first
                 const accessToken = response?.data;
                 cookies.set('accessToken', accessToken, { path: '/', maxAge: 3600 });
-                setSuccess(true);
+                document.location.replace('/account');
                 setAuth({ user, pwd, accessToken });
 
                 
@@ -81,20 +81,13 @@ const Login = () => {
 
   return (
     <>
-    
-    {success ? (
-        setTimeout(function() {
-            // Replace 'your-url' with the actual URL you want to redirect to
-            document.location.replace('/account');
-        }, 2000)
-    ) : (
         <><Navbar /><Menu />
         <section id="section_4" className="offwhite">
                       <section className="signup_section">
                           <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                          <h1 className="signup">Log In</h1>
+                          <h1 className="signup_header">Log In</h1>
                           <form id="loginForm" onSubmit={handleSubmit}>
-                              <label htmlFor="username">Username or Email:</label>
+                              <label htmlFor="username">Username or Email</label>
                               <input
                                   type="text"
                                   id="username"
@@ -104,7 +97,7 @@ const Login = () => {
                                   value={user}
                                   required />
 
-                              <label htmlFor="password">Password:</label>
+                              <label htmlFor="password">Password</label>
                               <input
                                   type="password"
                                   id="password"
@@ -117,12 +110,12 @@ const Login = () => {
                               Need an Account?<br />
                               <span className="line">
                                   {/*put router link here*/}
-                                  <NavLink to='/signup' className="login">Sign Up</NavLink>
+                                  <NavLink to='/signup' className="login_link">Sign Up</NavLink>
                               </span>
                           </p>
                       </section>
                   </section></>
-    )}
+    
 </>
   )
 }

@@ -254,14 +254,15 @@ const [commentStates, setCommentStates] = useState(initialCommentStates);
       }
     };
     return (
-        <div>
+        <div className="accountPageContainer">
            <div className="searchBarDiv2">
                 <SearchBar2 />
             </div>
           {imagesLoaded ? (
             <div>
             <div style={{ width: '100%', height: 'auto', backgroundColor: '#FAF9F6', marginTop: '10px', border: '2px solid #ececec', maxWidth: '100%', boxSizing: 'border-box' }}>
-                <div style={{
+                <div className='profilePictureBorder'
+                style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -338,8 +339,8 @@ const [commentStates, setCommentStates] = useState(initialCommentStates);
                             {showFullAbout ? "Less" : "More"} {/* Use showFullAbout state here */}
                         </button>
                         <br/><br/>
-                                <button onClick={submitRequest}>Send Friend Request</button>
-                                <button style={{marginLeft: '30px'}} onClick={sendMessage}>Send Message</button>
+                                <button className="friendButton" onClick={submitRequest}>Send Friend Request</button>
+                                <button className="friendButton" style={{marginLeft: '30px'}} onClick={sendMessage}>Send Message</button>
                     </div>
                 )}
             </p>
@@ -348,7 +349,7 @@ const [commentStates, setCommentStates] = useState(initialCommentStates);
 
             <div style={{ width: '100%', height: 'auto', backgroundColor: '#FAF9F6', marginTop: '10px', border: '2px solid #ececec', maxWidth: '100%', boxSizing: 'border-box', textAlign: 'center' }}>
                 <h1 style={{ color: '#209B47' }}>Friends</h1>
-                <button onClick={userFriends} style={{ paddingBottom: '20px' }}>Friend Lists</button>
+                <button className="friendButton" onClick={userFriends} style={{ paddingBottom: '20px' }}>Friend Lists</button>
             </div>
             <div
   style={{
@@ -370,6 +371,7 @@ const [commentStates, setCommentStates] = useState(initialCommentStates);
   {Array.isArray(userPosts) &&
   userPosts.map((post, index) => (
     <div
+    className="userPostContainer"
       key={post.id}
       style={{
         display: 'flex',
@@ -417,7 +419,7 @@ const [commentStates, setCommentStates] = useState(initialCommentStates);
         {post.photoContent && (
                   <img
                   src={`data:image/jpeg;base64,${post.photoContent}`}
-                  style={{ maxWidth: '100%', height: 'auto', marginBottom: '5px'}}
+                  style={{ maxWidth: '100%', width: '100%', maxHeight: '95vh', marginBottom: '5px'}}
                     alt="Photo"
                   />
                 )}
@@ -425,7 +427,7 @@ const [commentStates, setCommentStates] = useState(initialCommentStates);
                   <video  
                   controls
                   loop
-                  style={{ maxWidth: '100%', width: '100%', height: 'auto', marginBottom: '5px'}}
+                  style={{ maxWidth: '100%', width: '100%', maxHeight: '95vh', marginBottom: '5px'}}
                   src={`data:video/mp4;base64,${post.videoContent}`}
                   type="video/mp4">
                     Your browser does not support the video tag.

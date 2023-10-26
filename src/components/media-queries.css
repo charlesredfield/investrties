@@ -95,9 +95,6 @@
   color: #209B47;
 }
 .menu {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
   display: none;
 }
 .mobile-menu {
@@ -152,13 +149,16 @@
   }   
   .desktop-menu-right {
     display: none;
-  }.menu {
-    display: flex;
+  }
+  .menu {
     transition: transform 0.3s ease-in-out; /* Transitions for sliding and background color animations */
     z-index: 9;
     color: white;
     cursor: pointer;
     font-size: 1.3rem;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
   }
   .up {
     transform: translateY(-200%); /* Slide the navbar up and off the screen */
@@ -222,7 +222,6 @@
     .navbar {
       height: 7vh;
       flex-direction: column;
-      
     }
     .logo-container {
       display: flex;
@@ -231,7 +230,6 @@
       padding-top: 0px;
       padding-left: 0px;
     }
-    
     .logo {
       height: 50px;
       width: auto;
@@ -254,7 +252,6 @@
     .menu {
       display: flex;
       transition: transform 0.3s ease-in-out; /* Transitions for sliding and background color animations */
-      z-index: 9;
       color: white;
       cursor: pointer;
       font-weight: 500;
